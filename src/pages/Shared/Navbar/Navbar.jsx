@@ -2,6 +2,7 @@ import React from 'react';
 import ActiveLink from '../../../Components/ActiveLink/ActiveLink';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo/logo-bootcamp.webp'
+import Button from '../../../Components/Button';
 
 const Navbar = () => {
     const navOptions = <>
@@ -12,7 +13,7 @@ const Navbar = () => {
         <li className='text-[16px] font-semibold'><ActiveLink to="/dashboard" >Dashboard</ActiveLink></li>
     </>
     return (
-        <div className="navbar bg-slate-800 shadow-sm justify-center text-white">
+        <div className="fixed z-10 md:w-[1450px] navbar bg-slate-900 shadow-sm justify-center text-[#E2E8F0]">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,9 +34,9 @@ const Navbar = () => {
                     {navOptions}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <Link to="/login" className='bg-slate-800 text-white font-bold px-5 py-2 rounded-md'>Login</Link>
-            </div>
+            <button className="navbar-end">
+                <Link to="/login" className='bg-[#00C1A2] font-semibold text-[19px] text-white px-4 py-2 rounded-md'>Login</Link>
+            </button>
         </div>
     );
 };
