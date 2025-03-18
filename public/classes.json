@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Nature Photography Basics",
+        "description": "Learn to capture the beauty of the outdoors with expert guidance on composition, lighting, and storytelling.",
+        "highlights": [
+            "Field trips to scenic locations",
+            "Hands-on practice with DSLRs",
+            "Perfect for beginners"
+        ],
+        "cta": {
+            "text": "Learn More",
+            "link": "/classes/nature-photography-basics"
+        },
+        "image": "nature-photography.jpg"
+    },
+    {
+        "title": "Portrait Photography Masterclass",
+        "description": "Discover the art of capturing stunning portraits, from lighting setups to posing techniques.",
+        "highlights": [
+            "Studio and outdoor sessions",
+            "Learn editing in Adobe Lightroom",
+            "Build a portrait portfolio"
+        ],
+        "cta": {
+            "text": "Enroll Now",
+            "link": "/classes/portrait-photography-masterclass"
+        },
+        "image": "portrait-photography.jpg"
+    },
+    {
+        "title": "Night Photography Adventures",
+        "description": "Explore the magic of low-light photography, from cityscapes to star trails.",
+        "highlights": [
+            "Long exposure techniques",
+            "Guided night shoots",
+            "Advanced editing tips"
+        ],
+        "cta": {
+            "text": "Learn More",
+            "link": "/classes/night-photography-adventures"
+        },
+        "image": "night-photography.jpg"
+    }
+]
