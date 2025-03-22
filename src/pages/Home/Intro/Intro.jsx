@@ -9,33 +9,33 @@ import introImg1 from "../../../assets/images/intro/intro_img-1.jpg"
 
 const Intro = () => {
     return (
-        <div className='w-[100vw] md:w-full'>
+        <div className='w-[100vw] md:w-full ]'>
             <SectionTitle
                 subHeading="Discover The Difference"
                 heading="Discover Magic Of Our Kid's Experience"
             ></SectionTitle>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 p-4 md:p-0'>
-                <div className='bg-slate-100 rounded-md text-slate-900 p-10'>
-                    <div className='w-20 h-20 rounded-full bg-[#fffbe7] flex items-center justify-center mb-6'>
-                        <AiFillSafetyCertificate className='text-[#FACC15] text-6xl' />
+                <div className='bg-slate-100 rounded-md text-slate-900 p-10 border border-[#D4D4D8]'>
+                    <div className='w-20 h-20 rounded-full bg-[#c4dff9] flex items-center justify-center mb-6'>
+                        <AiFillSafetyCertificate className='text-[#6cadee] text-6xl' />
                     </div>
                     <h3 className='text-3xl font-bold mb-6'>Safe Environment</h3>
                     <p className='text-lg mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dignissimos dolorem et nemo praesentium quas consectetur quidem, vero deleniti voluptatem.</p>
                     <Link className='text-xl font-semibold'>Know More {">"}</Link>
                 </div>
 
-                <div className='bg-slate-100 rounded-md text-slate-900 p-10'>
-                    <div className='w-20 h-20 rounded-full bg-[#fffbe7] flex items-center justify-center mb-6'>
-                        <LiaUsersSolid className='text-[#FACC15] text-6xl' />
+                <div className='bg-slate-100 rounded-md text-slate-900 p-10 border border-[#D4D4D8]'>
+                    <div className='w-20 h-20 rounded-full bg-[#c4dff9] flex items-center justify-center mb-6'>
+                        <LiaUsersSolid className='text-[#6cadee] text-6xl' />
                     </div>
                     <h3 className='text-3xl font-bold mb-6'>Engaging Curriculum</h3>
                     <p className='text-lg mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dignissimos dolorem et nemo praesentium quas consectetur quidem, vero deleniti voluptatem.</p>
                     <Link className='text-xl font-semibold'>Know More {">"}</Link>
                 </div>
 
-                <div className='bg-slate-100 rounded-md text-slate-900 p-10'>
-                    <div className='w-20 h-20 rounded-full bg-[#fffbe7] flex items-center justify-center mb-6'>
-                        <FaUserTie className='text-[#FACC15] text-5xl' />
+                <div className='bg-slate-100 rounded-md text-slate-900 p-10 border border-[#D4D4D8]'>
+                    <div className='w-20 h-20 rounded-full bg-[#c4dff9] flex items-center justify-center mb-6'>
+                        <FaUserTie className='text-[#6cadee] text-5xl' />
                     </div>
                     <h3 className='text-3xl font-bold mb-6'>Expert Instructors</h3>
                     <p className='text-lg mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dignissimos dolorem et nemo praesentium quas consectetur quidem, vero deleniti voluptatem.</p>
@@ -48,9 +48,9 @@ const Intro = () => {
                     <img className='max-w-[100vw] p-4 md:p-0 rounded-xl md:border-y-8 border-slate-800' src={introImg1} alt="" />
                 </div>
 
-                <div className='md:w-1/2 flex flex-col items-start px-8 my-8'>
+                <div className='md:w-1/2 flex flex-col items-start px-8 justify-center'>
                     <p
-                        className='text-[#FACC15] md:text-xl bg-slate-800 px-6 py-2 mb-3 rounded-full'>About Focus Frame Camp</p>
+                        className='text-[#0f172b] font-semibold md:text-xl bg-[#9bcaf5] px-6 py-2 mb-3 rounded-full'>About Focus Frame Camp</p>
                     <h3 className='w-full text-4xl md:text-5xl  pb-6'>Empowering Children's <br /> Inspiring Future</h3>
 
                     <p className='mb-6 text-lg'>
@@ -58,15 +58,15 @@ const Intro = () => {
                     </p>
                     <ul className='text-lg flex flex-col gap-3'>
                         <li>
-                            <IoMdCheckmarkCircle className='inline mr-2 text-2xl text-[#facc15]' />
+                            <IoMdCheckmarkCircle className='inline mr-2 text-3xl text-[#6cadee]' />
                             Hands-on lessons in nature, portraits, and storytelling
                         </li>
                         <li>
-                            <IoMdCheckmarkCircle className='inline mr-2 text-2xl text-[#facc15]' />
+                            <IoMdCheckmarkCircle className='inline mr-2 text-3xl text-[#6cadee]' />
                             Professional mentors guide every step of the way
                         </li>
                         <li>
-                            <IoMdCheckmarkCircle className='inline mr-2 text-2xl text-[#facc15]' />
+                            <IoMdCheckmarkCircle className='inline mr-2 text-3xl text-[#6cadee]' />
                             A summer of fun, learning, and unforgettable memories
                         </li>
                     </ul>

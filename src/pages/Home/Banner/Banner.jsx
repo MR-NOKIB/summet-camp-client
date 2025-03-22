@@ -5,14 +5,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Lottie from "lottie-react";
-import lottieJsonBNRData1 from '../../../assets/lottie/Animation.json'
+import lottieJsonBNRData1 from '../../../assets/lottie/Animation - 1742015080375.json'
 import lottieJsonBNRData2 from '../../../assets/lottie/camera-outline.json'
 import banner1 from '../../../assets/images/banner/undraw_good-team_zww8.png'
 import banner2 from '../../../assets/images/banner/undraw_landscape-photographer_e84n.png'
-import { FaRegHandPointRight } from "react-icons/fa6"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Button from '../../../Components/Button';
+import Button from '../../../Components/Buttons/Button';
 AOS.init();
 
 const Banner = () => {
@@ -29,7 +28,7 @@ const Banner = () => {
                     clickable: true,
                 }}
                 navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[ Pagination, Navigation]}
                 className="mySwiper"
             >
                 {/* slide 1 */}
@@ -49,13 +48,10 @@ const Banner = () => {
                                 data-aos-mirror="true"
                                 data-aos-once="false"
                                 className="px-5 text-center md:text-left">
-                                <i className='text-[#FACC15] textarea-xl'>
-                                    Focus Frame Camp
-                                </i>
                                 <h1 data-aos="flip-left" className="text-5xl md:text-7xl font-bold mt-3">
                                     Capture Your<br /> World Through <br />a New Lens
                                 </h1>
-                                <p className='text-[#FACC15] md:textarea-xl mt-6 mb-6'>
+                                <p className='text-[#c4dff9] md:textarea-xl mt-6 mb-6'>
                                     Discover the World One Click at a Time
                                 </p>
                                 <Button>
@@ -88,13 +84,10 @@ const Banner = () => {
                             data-aos-once="false"
                             className='text-white flex flex-col md:flex-row md:items-center md:justify-between md:px-30 py-10'>
                             <div data-aos="fade-right" className="px-5 text-center md:text-left">
-                                <i className='text-[#FACC15] textarea-xl'>
-                                    Focus Frame Camp
-                                </i>
                                 <h1 className="text-5xl md:text-7xl font-bold mt-3">
                                     Master<br /> the Art of <br />Light & Shadow
                                 </h1>
-                                <p className='text-[#FACC15] md:textarea-xl mt-6 mb-6'>
+                                <p className='text-[#c4dff9] md:textarea-xl mt-6 mb-6'>
                                     Turn Ordinary Moments into Extraordinary Art
                                 </p>
                                 <Button>
@@ -127,13 +120,10 @@ const Banner = () => {
                                 data-aos-mirror="true"
                                 data-aos-once="false"
                                 className="px-5 text-center md:text-left">
-                                <i className='text-[#FACC15] textarea-xl'>
-                                    Focus Frame Camp
-                                </i>
                                 <h1 className="text-5xl md:text-7xl font-bold mt-3">
                                     Adventures <br />in Every Frame
                                 </h1>
-                                <p className='text-[#FACC15] md:textarea-xl mt-6 mb-6'>
+                                <p className='text-[#c4dff9] md:textarea-xl mt-6 mb-6'>
                                     Where Creativity Meets Adventure
                                 </p>
                                 <Button>
@@ -168,13 +158,10 @@ const Banner = () => {
                                 data-aos-mirror="true"
                                 data-aos-once="false"
                                 className="px-5 text-center md:text-left">
-                                <i className='text-[#FACC15] textarea-xl'>
-                                    Focus Frame Camp
-                                </i>
                                 <h1 className="text-5xl md:text-7xl font-bold mt-3">
                                     From Beginner <br />to Pro in<br /> One Summer
                                 </h1>
-                                <p className='text-[#FACC15] md:textarea-xl mt-6 mb-6'>
+                                <p className='text-[#c4dff9] md:textarea-xl mt-6 mb-6'>
                                     our Journey Starts Here
                                 </p>
                                 <Button>

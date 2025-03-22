@@ -14,22 +14,22 @@ import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 
 const Gallery = () => {
     return (
-        <div className='my-24'>
+        <div className=''>
             <SectionTitle
             heading="Student Gallery"
             subHeading="Where Every Photo Tells a Story"
             ></SectionTitle>
             <Marquee speed={100} className=''>
-                <img className='w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img1} alt="" />
-                <img className='w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img2} alt="" />
-                <img className='w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img3} alt="" />
-                <img className='w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img4} alt="" />
-                <img className='w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img5} alt="" />
-                <img className='w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img6} alt="" />
-                <img className='w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img7} alt="" />
+                <img className='rounded-lg border border-[#D4D4D8] w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img1} alt="" />
+                <img className='rounded-lg border border-[#D4D4D8] w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img2} alt="" />
+                <img className='rounded-lg border border-[#D4D4D8] w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img3} alt="" />
+                <img className='rounded-lg border border-[#D4D4D8] w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img4} alt="" />
+                <img className='rounded-lg border border-[#D4D4D8] w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img5} alt="" />
+                <img className='rounded-lg border border-[#D4D4D8] w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img6} alt="" />
+                <img className='rounded-lg border border-[#D4D4D8] w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img7} alt="" />
                 <img className='h-[300px] w-[300px] md:h-[400px] ml-6' src={img8} alt="" />
-                <img className='w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img9} alt="" />
-                <img className='w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img10} alt="" />
+                <img className='rounded-lg border border-[#D4D4D8] w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img9} alt="" />
+                <img className='rounded-lg border border-[#D4D4D8] w-[100vw] h-[300px] md:w-[500px] md:h-[400px] ml-6' src={img10} alt="" />
             </Marquee>
         </div>
     );
