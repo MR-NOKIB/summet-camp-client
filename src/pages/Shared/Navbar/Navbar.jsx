@@ -12,10 +12,10 @@ const Navbar = () => {
             .catch(err => console.log(err))
     }
     const navOptions = <>
-        <li className='text-[16px] font-semibold text-slate-600'><ActiveLink to="/" >Home</ActiveLink></li>
-        <li className='text-[16px] font-semibold text-slate-600'><ActiveLink to="/classes" >Classes</ActiveLink></li>
-        <li className='text-[16px] font-semibold text-slate-600'><ActiveLink to="/instructors" >Instructors</ActiveLink></li>
-        <li className='text-[16px] font-semibold text-slate-600'><ActiveLink to="/dashboard" >Dashboard</ActiveLink></li>
+        <li className='text-[16px] font-semibold rounded text-slate-600 hover:bg-[#264382] hover:text-white'><ActiveLink to="/" >Home</ActiveLink></li>
+        <li className='text-[16px] font-semibold rounded text-slate-600 hover:bg-[#264382] hover:text-white'><ActiveLink to="/classes" >Classes</ActiveLink></li>
+        <li className='text-[16px] font-semibold rounded text-slate-600 hover:bg-[#264382] hover:text-white'><ActiveLink to="/instructors" >Instructors</ActiveLink></li>
+        <li className='text-[16px] font-semibold rounded text-slate-600 hover:bg-[#264382] hover:text-white'><ActiveLink to="/dashboard" >Dashboard</ActiveLink></li>
     </>
 
     return (

@@ -7,11 +7,10 @@
             "Hands-on practice with DSLRs",
             "Perfect for beginners"
         ],
-        "cta": {
-            "text": "Learn More",
-            "link": "/classes/nature-photography-basics"
-        },
-        "image": "nature-photography.jpg"
+        "image": "https://i.ibb.co/8DqdL37P/normal.jpg",
+        "price": 199,
+        "availableSeats": 10,
+        "instructor": "John Smith"
     },
     {
         "title": "Portrait Photography Masterclass",
@@ -21,11 +20,10 @@
             "Learn editing in Adobe Lightroom",
             "Build a portrait portfolio"
         ],
-        "cta": {
-            "text": "Enroll Now",
-            "link": "/classes/portrait-photography-masterclass"
-        },
-        "image": "portrait-photography.jpg"
+        "image": "https://i.ibb.co/R4kBbFj5/portrait.jpg",
+        "price": 299,
+        "availableSeats": 8,
+        "instructor": "Sarah Lee"
     },
     {
         "title": "Night Photography Adventures",
@@ -35,10 +33,35 @@
             "Guided night shoots",
             "Advanced editing tips"
         ],
-        "cta": {
-            "text": "Learn More",
-            "link": "/classes/night-photography-adventures"
-        },
-        "image": "night-photography.jpg"
+        "image": "https://i.ibb.co/rRc6CMnR/night.jpg",
+        "price": 249,
+        "availableSeats": 12,
+        "instructor": "Michael Brown"
+    },
+    {
+        "title": "Street Photography Workshop",
+        "description": "Master the art of candid photography and storytelling in urban environments.",
+        "highlights": [
+            "Candid shooting techniques",
+            "Urban composition tips",
+            "Editing for street photography"
+        ],
+        "image": "https://i.ibb.co/DfzFBYD7/street.jpg",
+        "price": 179,
+        "availableSeats": 15,
+        "instructor": "Emily Davis"
+    },
+    {
+        "title": "Drone Photography & Videography",
+        "description": "Learn to capture breathtaking aerial shots and cinematic videos with drones.",
+        "highlights": [
+            "Drone operation basics",
+            "Aerial composition techniques",
+            "Editing drone footage"
+        ],
+        "image": "https://i.ibb.co/GG5bsHf/drone.jpg",
+        "price": 399,
+        "availableSeats": 5,
+        "instructor": "Alex Carter"
     }
 ]

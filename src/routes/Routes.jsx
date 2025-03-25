@@ -4,9 +4,17 @@ import Home from "../pages/Home/Home/Home";
 import About from "../pages/About/About";
 import Classes from "../pages/Classes/Classes";
 import Instructors from "../pages/Instructors/Instructors";
-import Dashboard from "../pages/Dashboard/Dashboard";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Dashboard from "../Layout/Dashboard";
+import AddClass from "../pages/Dashboard/InstructorDashboard/AddClass/AddClass";
+import ManageClasses from "../pages/Dashboard/AdminDashboard/ManageClasses/ManageClasses";
+import ManageUsers from "../pages/Dashboard/AdminDashboard/ManageUsers/ManageUsers";
+import InsMyClasses from "../pages/Dashboard/InstructorDashboard/InsMyClasses/InsMyClasses";
+import MyEnrolledClasses from "../pages/Dashboard/StudentDashboard/MyEnrolledClasses/MyEnrolledClasses";
+import MySelectedClasses from "../pages/Dashboard/StudentDashboard/MySelectedClasses/MySelectedClasses";
+import Payment from "../pages/Dashboard/StudentDashboard/Payment/Payment";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -21,17 +29,13 @@ const router = createBrowserRouter([
                 element: <About></About>
             },
             {
-                path: "/classes",
+                path: "classes",
                 element: <Classes></Classes>,
                 loader: () => fetch('http://localhost:5000/classes')
             },
             {
                 path: "instructors",
                 element: <Instructors></Instructors>
-            },
-            {
-                path: "dashboard",
-                element: <Dashboard></Dashboard>
             },
             {
                 path: "login",
@@ -43,6 +47,42 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path: 'dashboard',
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+            {
+                path: 'manageClasses',
+                element: <ManageClasses></ManageClasses>
+            },
+            {
+                path: 'manageUsers',
+                element: <ManageUsers></ManageUsers>
+            },
+            {
+                path: 'insMyClasses',
+                element: <InsMyClasses></InsMyClasses>
+            },
+            {
+                path: 'addClass',
+                element: <AddClass></AddClass>
+            },
+
+            // User Route
+            {
+                path: 'myEnrolledClasses',
+                element: <MyEnrolledClasses></MyEnrolledClasses>
+            },
+            {
+                path: 'selectedClasses',
+                element: <MySelectedClasses></MySelectedClasses>
+            },
+            {
+                path: 'payment',
+                element: <Payment></Payment>
+            }
+        ]
+    }
 ]);
 
 export default router;

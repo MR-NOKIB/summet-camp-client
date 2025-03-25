@@ -8,7 +8,7 @@ const InsCard = ({ cardData }) => {
             <img
                 src={cardData?.image}
                 alt={cardData?.title}
-                className="md:h-[350px] w-full rounded-lg"
+                className="md:h-[400px] w-full rounded-lg"
             />
             <div className="px-6 pt-6 pb-7 flex flex-col flex-grow">
                 <h3 className="text-[#0f172b] text-3xl font-semibold mb-2">
