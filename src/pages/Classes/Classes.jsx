@@ -8,13 +8,13 @@ const Classes = () => {
     console.log(classes);
 
     return (
-        <div className='mt-[64px] md:mt-[69.78px]'>
+        <div className='pt-[64px] md:pt-[69.78px] mb-10 max-w-[1450px] mx-auto'>
             <SectionTitle
                 heading="Explore Our Photography Classes"
                 subHeading="Unlock your creativity with hands-on learning."
             ></SectionTitle>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
                     classes && classes.map(cardData => <Card
                         key={cardData._id}

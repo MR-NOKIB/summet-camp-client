@@ -7,7 +7,7 @@ import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 const MySelectedClasses = () => {
     const [refetch, cart] = useCart();
     const axiosSecure = useAxiosSecure();
-    console.log(cart);
+    // console.log(cart);
 
     const handleDelete = id => {
         Swal.fire({
@@ -23,7 +23,7 @@ const MySelectedClasses = () => {
                 axiosSecure.delete(`/carts/${id}`)
                     .then(res => {
                         console.log(res.data);
-                        if (res.data.deletedCount > 1) {
+                        if (res.data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Successfully Deleted",
@@ -37,7 +37,7 @@ const MySelectedClasses = () => {
     }
 
     return (
-        <div className='w-full pl-16'>
+        <div className='w-full px-16 '>
             <h2 className="text-3xl text-center mb-10">My Selected Classes</h2>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -47,7 +47,7 @@ const MySelectedClasses = () => {
                             <th>#</th>
                             <th>Image</th>
                             <th>Name</th>
-                            <th> </th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

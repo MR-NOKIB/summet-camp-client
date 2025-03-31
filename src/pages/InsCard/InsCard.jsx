@@ -4,7 +4,7 @@ import ButtonSoft from '../../Components/Buttons/ButtonSoft';
 
 const InsCard = ({ cardData }) => {
     return (
-        <div className="bg-[#f0f7fe] border border-[#EAEDF1] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 px-4 pt-4 flex flex-col">
+        <div className="bg-[#f0f7fe] hover:shadow-2xl shadow-[#2b5eca] border border-[#D4D4D8] rounded-lg transition-shadow duration-300 px-4 pt-4 flex flex-col">
             <img
                 src={cardData?.image}
                 alt={cardData?.title}

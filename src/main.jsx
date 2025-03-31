@@ -11,7 +11,7 @@ import AuthProvider from './provider/AuthProvider.jsx';
 const queryclient = new QueryClient();
 
 createRoot(document.getElementById('root')).render(
-  <div className='md:max-w-[1450px] mx-auto'>
+  <div className=''>
     <QueryClientProvider client={queryclient}>
       <StrictMode>
         <AuthProvider>

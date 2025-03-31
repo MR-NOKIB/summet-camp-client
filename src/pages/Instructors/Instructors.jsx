@@ -8,12 +8,12 @@ const Instructors = () => {
     const [, instructors] = useInstructors();
     console.log(instructors);
     return (
-        <div className='mt-[70px]'>
+        <div className='pt-[64px] md:pt-[69.78px] mb-10 max-w-[1450px] mx-auto'>
             <SectionTitle
                 heading="Meet Our Expert Instructors"
                 subHeading="Expert guidance, endless inspiration."
             ></SectionTitle>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
                     instructors && instructors.map(instructor => <InsCard
                         key={instructor._id}

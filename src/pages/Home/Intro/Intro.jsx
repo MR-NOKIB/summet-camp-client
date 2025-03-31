@@ -43,12 +43,12 @@ const Intro = () => {
                 </div>
             </div>
 
-            <div className='mt-20 md:flex gap-10'>
-                <div className='md:w-1/2 pr-6 md:box-content'>
+            <div className='mt-20 flex flex-col lg:flex-row gap-10'>
+                <div className='lg:w-1/2 pr-6 lg:box-content'>
                     <img className='max-w-[100vw] p-4 md:p-0 rounded-xl md:border-y-8 border-slate-800' src={introImg1} alt="" />
                 </div>
 
-                <div className='md:w-1/2 flex flex-col items-start px-8 justify-center'>
+                <div className='lg:w-1/2 flex flex-col items-start px-8 justify-center'>
                     <p
                         className='text-[#0f172b] font-semibold md:text-xl bg-[#9bcaf5] px-6 py-2 mb-3 rounded-full'>About Focus Frame Camp</p>
                     <h3 className='w-full text-4xl md:text-5xl  pb-6'>Empowering Children's <br /> Inspiring Future</h3>

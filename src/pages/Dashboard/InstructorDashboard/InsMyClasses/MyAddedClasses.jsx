@@ -1,49 +1,45 @@
 import React from 'react';
-import SectionTitle from '../../../../Components/SectionTitle/SectionTitle';
-import { useClasses } from '../../../../hooks/useClasses';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
+import { useClasses } from '../../../../hooks/useClasses';
 import { FaTrashAlt } from 'react-icons/fa';
+import useAuth from '../../../../hooks/useAuth';
 
-const ManageClasses = () => {
-    const [refetch, classes] = useClasses();
-    // console.log(classes);
+const MyAddedClasses = () => {
+    const {user} = useAuth();
+    const [refetch, Classes] = useClasses(user?.email);
     const axiosSecure = useAxiosSecure();
+    // console.log(Classes);
 
     const handleDelete = id => {
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    axiosSecure.delete(`/classes/${id}`)
-                        .then(res => {
-                            console.log(res.data);
-                            if (res.data.deletedCount > 0) {
-                                Swal.fire({
-                                    title: "Deleted!",
-                                    text: "Successfully Deleted",
-                                    icon: "success"
-                                });
-                            }
-                            refetch();
-                        })
-                }
-            });
-        }
-
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/Classes/${id}`)
+                    .then(res => {
+                        console.log(res.data);
+                        if (res.data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Successfully Deleted",
+                                icon: "success"
+                            });
+                        }
+                        refetch();
+                    })
+            }
+        });
+    }
     return (
-        <div className='w-full mx-16'>
-            <div className='flex flex-col justify-center items-center py-7'>
-                <p
-                    className='text-[#0f172b] font-semibold md:text-xl text-center bg-[#9bcaf5] px-6 py-2 mb-3 rounded-full italic'>Class catalog editor</p>
-                <h3 className='w-full md:w-1/2 font-bold text-center text-4xl md:text-5xl'>Manage Classes</h3>
-            </div>
+        <div className='w-full px-16 '>
+            <h2 className="text-3xl text-center mb-10">My Selected Classes</h2>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -57,7 +53,7 @@ const ManageClasses = () => {
                     </thead>
                     <tbody>
                         {
-                            classes && classes.map((classData, index) => <tr
+                            Classes && Classes.map((classData, index) => <tr
                                 key={classData._id}
                             >
                                 <td>
@@ -88,4 +84,4 @@ const ManageClasses = () => {
     );
 };
 
-export default ManageClasses;
+export default MyAddedClasses;

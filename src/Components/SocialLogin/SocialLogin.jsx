@@ -1,19 +1,32 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const SocialLogin = () => {
+    const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/"
     const { googleSignIn } = useAuth();
     const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(result => {
-            console.log(result.user);
-            navigate(from, {replace: true})
-        })
-        .catch(err => console.log(err))
+            .then(result => {
+                if (result) {
+                    const userInfo = {
+                        name: result.user.displayName,
+                        email: result.user.email
+                    }
+                    axiosPublic.post('/users', userInfo)
+                        .then(res => {
+                            if (res) {
+                                navigate(from, { replace: true });
+                            }
+                        })
+                        .catch(err => console.log(err))
+                }
+            })
+            .catch(err => console.log(err))
     }
     return (
         <div className='w-full px-6'>
