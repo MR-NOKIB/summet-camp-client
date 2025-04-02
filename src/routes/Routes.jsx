@@ -17,6 +17,8 @@ import PrivateRoute from "./PrivateRoute";
 import MyAddedClasses from "../pages/Dashboard/InstructorDashboard/InsMyClasses/MyAddedClasses";
 import AdminRoute from "./AdminRoute";
 import AdminOrInstructor from "./AdminOrInstructor";
+import SuccessPayment from "../Components/SuccessPayment/SuccessPayment";
+import CancelPayment from "../Components/CancelPayment/CancelPayment";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -84,7 +86,9 @@ const router = createBrowserRouter([
                 element: <Payment></Payment>
             }
         ]
-    }
+    },
+    { path: 'success', element: <SuccessPayment></SuccessPayment>},
+    { path: 'cancel', element: <CancelPayment></CancelPayment>},
 ]);
 
 export default router;

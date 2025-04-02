@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo/logo-bootcamp.webp'
 import useAuth from '../../../hooks/useAuth';
 import { FaUserCircle } from "react-icons/fa";
+import { RiShoppingBag3Line } from "react-icons/ri";
 const Navbar = () => {
     const { user, logOut } = useAuth();
     const handleLogOut = () => {
@@ -43,6 +44,11 @@ const Navbar = () => {
                 </div>
                 {
                     user ? <div className='navbar-end mr-4 items-center gap-6 text-white'>
+                        <Link to="/dashboard/selectedClasses">
+                            <button className="btn items-center justify-center">
+                                <RiShoppingBag3Line className='text-2xl' />
+                                <div className="badge badge-sm bg-linear-to-r from-[#498ee8] to-[#3472dc]">+99</div>
+                            </button></Link>
                         <span className='flex items-center gap-2'>
                             <FaUserCircle className='inline text-4xl mr-1' /> {user.displayName}
                         </span>
@@ -52,9 +58,11 @@ const Navbar = () => {
                             Log Out
                         </button>
                     </div>
-                        : <button className="navbar-end mr-4">
-                            <Link to="/login" className='bg-linear-to-r from-[#498ee8] to-[#3472dc] hover:bg-gradient-to-r hover:from-[#3472dc] hover:to-[#2b5eca] border border-[#2b5eca] hover:border-[#294da4] font-semibold text-[19px] text-white px-5 py-2 rounded-md '>Login</Link>
-                        </button>
+                        : <>
+                            <RiShoppingBag3Line />
+                            <button className="navbar-end mr-4">
+                                <Link to="/login" className='bg-linear-to-r from-[#498ee8] to-[#3472dc] hover:bg-gradient-to-r hover:from-[#3472dc] hover:to-[#2b5eca] border border-[#2b5eca] hover:border-[#294da4] font-semibold text-[19px] text-white px-5 py-2 rounded-md '>Login</Link>
+                            </button></>
                 }
             </div>
         </div>
