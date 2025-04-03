@@ -7,7 +7,7 @@ const PopularClasses = () => {
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/classes/limit')
+        fetch('https://summer-camp-server-mr-nokib-nojom-uddins-projects.vercel.app/classes/limit')
             .then(res => res.json())
             .then(data => setClasses(data));
     }, []);
@@ -20,7 +20,7 @@ const PopularClasses = () => {
             ></SectionTitle>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
                 {
-                    classes.map(classData => <Card
+                    classes?.map(classData => <Card
                         key={classData._id}
                         cardData={classData}
                     ></Card>)

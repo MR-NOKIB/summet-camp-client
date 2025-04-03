@@ -55,7 +55,7 @@ const Login = () => {
 
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero bg-base-200 min-h-screen flex md:max-w-[1450px] mx-auto pb-10 pt-10 md:pt-0">
             <div className="lg:flex lg:items-center lg:justify-center gap-4 p-4 w-full h-full flex-col lg:flex-row-reverse">
                 <div className="md:w-1/2">
                     <Lottie className=" md:w-[800px]" animationData={registerLottie}></Lottie>

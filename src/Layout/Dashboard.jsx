@@ -13,7 +13,7 @@ const Dashboard = () => {
     const [isInstructor] = useIsInstructor();
     console.log(isInstructor);
     return (
-        <div className='flex min-h-screen md:max-w-[1450px] mx-auto pb-10'>
+        <div className='flex min-h-screen md:max-w-[1450px] mx-auto'>
             <div className='w-[350px] bg-[#0F172B]'>
                 <img className='h-[60px] w-[120px] ml-6 mt-6 mb-3' src={logo} alt="" />
                 <ul className='text-lg flex flex-col gap-5 px-6'>
@@ -32,6 +32,10 @@ const Dashboard = () => {
                             <li className='text-xl hover:bg-[#264382] hover:text-white py-2 px-3 rounded text-slate-600 flex items-center gap-2'>
                                 <IoAdd />
                                 <Link className='w-full h-full' to="/dashboard/addClass" >Add Class</Link>
+                            </li>
+                            <li className='text-xl hover:bg-[#264382] hover:text-white py-2 px-3 rounded text-slate-600 flex items-center gap-2'>
+                                <IoAdd />
+                                <Link className='w-full h-full' to="/dashboard/manageOrders" >Manage Orders</Link>
                             </li>
                         </> : isInstructor ?
                             <>
@@ -57,6 +61,10 @@ const Dashboard = () => {
                                 <li className='text-xl hover:bg-[#264382] hover:text-white pb-2 px-3 rounded text-slate-600 flex items-center gap-2'>
                                     <MdPayment />
                                     <Link className='w-full h-full' to="/dashboard/payment" >Payment</Link>
+                                </li>
+                                <li className='text-xl hover:bg-[#264382] hover:text-white pb-2 px-3 rounded text-slate-600 flex items-center gap-2'>
+                                    <MdPayment />
+                                    <Link className='w-full h-full' to="/dashboard/paymentHistory" >Payment History</Link>
                                 </li>
                             </>
                     }

@@ -5,7 +5,10 @@ import logo from '../../../assets/images/logo/logo-bootcamp.webp'
 import useAuth from '../../../hooks/useAuth';
 import { FaUserCircle } from "react-icons/fa";
 import { RiShoppingBag3Line } from "react-icons/ri";
+import useCart from '../../../hooks/useCart';
+import { FiLogOut } from "react-icons/fi";
 const Navbar = () => {
+    const [, cart] = useCart();
     const { user, logOut } = useAuth();
     const handleLogOut = () => {
         logOut()
@@ -30,6 +33,11 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-slate-800 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            {
+                                user && <li className='items-center md:gap-2 gap-1'>
+                                    <FaUserCircle className='inline text-4xl mr-1' /> {user.displayName}
+                                    </li>
+                            }
                             {navOptions}
                         </ul>
                     </div>
@@ -43,26 +51,34 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {
-                    user ? <div className='navbar-end mr-4 items-center gap-6 text-white'>
-                        <Link to="/dashboard/selectedClasses">
-                            <button className="btn items-center justify-center">
-                                <RiShoppingBag3Line className='text-2xl' />
-                                <div className="badge badge-sm bg-linear-to-r from-[#498ee8] to-[#3472dc]">+99</div>
-                            </button></Link>
-                        <span className='flex items-center gap-2'>
-                            <FaUserCircle className='inline text-4xl mr-1' /> {user.displayName}
-                        </span>
-                        <button
-                            onClick={handleLogOut}
-                            className='bg-linear-to-r from-[#498ee8] to-[#3472dc] hover:bg-gradient-to-r hover:from-[#3472dc] hover:to-[#2b5eca] border border-[#2b5eca] hover:border-[#294da4] font-semibold text-[19px] text-white px-5 py-2 rounded-md'>
-                            Log Out
-                        </button>
-                    </div>
-                        : <>
-                            <RiShoppingBag3Line />
-                            <button className="navbar-end mr-4">
-                                <Link to="/login" className='bg-linear-to-r from-[#498ee8] to-[#3472dc] hover:bg-gradient-to-r hover:from-[#3472dc] hover:to-[#2b5eca] border border-[#2b5eca] hover:border-[#294da4] font-semibold text-[19px] text-white px-5 py-2 rounded-md '>Login</Link>
-                            </button></>
+                    user ?
+                        <div className='navbar-end items-center gap-2 md:gap-6 text-white'>
+                            <Link to="/dashboard/selectedClasses">
+                                <button className="btn items-center justify-center">
+                                    <RiShoppingBag3Line className='text-2xl' />
+                                    <div className="badge badge-sm bg-linear-to-r from-[#498ee8] to-[#3472dc]">+{cart.length}</div>
+                                </button>
+                            </Link>
+                            <span className='items-center md:gap-2 gap-1 hidden md:block'>
+                                <FaUserCircle className='inline text-4xl mr-1' /> {user.displayName}
+                            </span>
+                            <button
+                                onClick={handleLogOut}
+                                className='bg-linear-to-r from-[#498ee8] to-[#3472dc] hover:bg-gradient-to-r hover:from-[#3472dc] hover:to-[#2b5eca] border border-[#2b5eca] hover:border-[#294da4] font-semibold text-[19px] text-white px-3 py-2 rounded-md'>
+                                <FiLogOut className='text-xl' />
+                            </button>
+                        </div>
+                        : <div className='navbar-end items-center gap-2 md:gap-6 text-white'>
+                            <Link to="/dashboard/selectedClasses">
+                                <button className="btn items-center justify-center">
+                                    <RiShoppingBag3Line className='text-2xl' />
+                                    <div className="badge badge-sm bg-linear-to-r from-[#498ee8] to-[#3472dc]">+{cart.length}</div>
+                                </button>
+                            </Link>
+                            <button className="navbar-end">
+                                <Link to="/login" className='bg-linear-to-r from-[#498ee8] to-[#3472dc] hover:bg-gradient-to-r hover:from-[#3472dc] hover:to-[#2b5eca] border border-[#2b5eca] hover:border-[#294da4] font-semibold md:text-[19px] text-white px-5 py-2 rounded-md '>Login</Link>
+                            </button>
+                        </div>
                 }
             </div>
         </div>

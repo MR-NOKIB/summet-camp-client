@@ -4,11 +4,13 @@ import ButtonSoft from "../../../Components/Buttons/ButtonSoft";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import useCart from "../../../hooks/useCart";
 
 const Card = ({ cardData }) => {
     const { _id, title, image, price } = cardData;
     const axiosSecure = useAxiosSecure();
     const { user } = useAuth();
+    const [refetch] = useCart();
 
     const handleSelect = () => {
         if (user && user.email) {
@@ -26,10 +28,12 @@ const Card = ({ cardData }) => {
                         Swal.fire({
                             position: "center",
                             icon: "success",
-                            title: "Added to My Classes",
+                            iconColor: "#6cadee",
+                            title: "Added to My Bag",
                             showConfirmButton: false,
                             timer: 1500
                         });
+                        refetch();
                     }
                 })
         };
@@ -61,11 +65,19 @@ const Card = ({ cardData }) => {
                         Price: <span className="font-bold text-[#6cadee]">${cardData?.price}</span>
                     </p>
                 )}
-                <div className="mt-auto">
-                    <ButtonSoft click={handleSelect} css="w-full">
-                        <Link>Select</Link>
-                    </ButtonSoft>
-                </div>
+                {
+                    user
+                        ? <div className="mt-auto">
+                            <ButtonSoft click={handleSelect} css="w-full">
+                                <Link>Select</Link>
+                            </ButtonSoft>
+                        </div>
+                        : <div className="mt-auto">
+                            <ButtonSoft css="w-full">
+                                <Link to="/login">Select</Link>
+                            </ButtonSoft>
+                        </div>
+                }
             </div>
         </div>
     );

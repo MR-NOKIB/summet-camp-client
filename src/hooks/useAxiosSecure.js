@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://summer-camp-server-mr-nokib-nojom-uddins-projects.vercel.app'
 });
 
 const useAxiosSecure = () => {
@@ -23,8 +23,8 @@ const useAxiosSecure = () => {
     axiosSecure.interceptors.response.use(function (response) {
         return response;
     }, async (error) => {
-        const status = error.response.status;
-        // console.log(error.response.status);
+        const status = error.response?.status;
+        console.error('API Error:', error.response?.data || error.message);
 
         if (status === 401 || status === 403) {
             await logOut();

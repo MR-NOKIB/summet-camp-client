@@ -19,6 +19,8 @@ import AdminRoute from "./AdminRoute";
 import AdminOrInstructor from "./AdminOrInstructor";
 import SuccessPayment from "../Components/SuccessPayment/SuccessPayment";
 import CancelPayment from "../Components/CancelPayment/CancelPayment";
+import PaymentHistory from "../pages/Dashboard/StudentDashboard/PaymentHistory/PaymentHistory";
+import ManageOrders from "../pages/Dashboard/AdminDashboard/ManageOrders/ManageOrders";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -35,7 +37,6 @@ const router = createBrowserRouter([
             {
                 path: "classes",
                 element: <Classes></Classes>,
-                loader: () => fetch('http://localhost:5000/classes')
             },
             {
                 path: "instructors",
@@ -84,6 +85,14 @@ const router = createBrowserRouter([
             {
                 path: 'payment',
                 element: <Payment></Payment>
+            },
+            {
+                path: 'paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
+            },
+            {
+                path: 'manageOrders',
+                element: <AdminRoute><ManageOrders></ManageOrders></AdminRoute>
             }
         ]
     },

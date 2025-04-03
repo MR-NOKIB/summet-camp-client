@@ -5,7 +5,6 @@ import Card from '../Shared/Card/Card';
 const Classes = () => {
     // const classes = useLoaderData();
     const [, classes] = useClasses();
-    console.log(classes);
 
     return (
         <div className='pt-[64px] md:pt-[69.78px] mb-10 max-w-[1450px] mx-auto'>

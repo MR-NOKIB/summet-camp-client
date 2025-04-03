@@ -5,14 +5,15 @@ import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 import Button from '../../../../Components/Buttons/Button';
 import { Link } from 'react-router-dom';
-import { loadStripe } from '@stripe/stripe-js';
 import useAxiosPublic from '../../../../hooks/useAxiosPublic';
+import useAuth from '../../../../hooks/useAuth';
 
 const MySelectedClasses = () => {
     const [refetch, cart] = useCart();
     const axiosSecure = useAxiosSecure();
     const axiosPublic = useAxiosPublic();
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    const {user} = useAuth();
     // console.log(cart);
 
     const handleDelete = id => {
@@ -33,7 +34,8 @@ const MySelectedClasses = () => {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Successfully Deleted",
-                                icon: "success"
+                                icon: "success",
+                                iconColor: "#6cadee"
                             });
                         }
                         refetch();
@@ -44,33 +46,37 @@ const MySelectedClasses = () => {
 
     const handleMakePayment = async () => {
         try {
-            // Ensure totalPrice is defined and valid
             if (!totalPrice || isNaN(totalPrice) || totalPrice <= 0) {
                 console.error('Invalid Price:', totalPrice);
                 alert('Error: Total price is invalid or missing.');
                 return;
             }
-    
-            // Prepare order info
+
+            // Prepare order info with additional required fields
             const orderInfo = {
                 price: totalPrice,
+                email: user.email,
+                name: user.displayName,
+                cartItems: cart.map(item => ({
+                    classId: item.classId,
+                    title: item.title,
+                    price: item.price,
+                    image: item.image
+                }))
             };
-    
-            console.log('Sending orderInfo:', orderInfo);
-    
-            // Make the POST request to the backend
+
+            // console.log('Sending orderInfo:', orderInfo);
+
             const res = await axiosPublic.post('/create-checkout-session', orderInfo);
-    
-            // Check if we have a URL in the response
+
             if (!res.data || !res.data.url) {
                 console.error('Invalid response from server:', res.data);
                 alert('Error: Invalid response from payment server.');
                 return;
             }
-    
-            // Redirect to the Stripe Checkout URL
+
             window.location.href = res.data.url;
-    
+
         } catch (error) {
             console.error('Payment process failed:', error);
             if (error.response) {
@@ -81,6 +87,9 @@ const MySelectedClasses = () => {
             }
         }
     };
+
+
+    
     return (
         <div className='w-full px-16'>
             <h2 className="text-3xl text-center mb-10">My Selected Classes</h2>
